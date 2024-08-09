@@ -1,12 +1,14 @@
 package list
 
-import (
+import 
+(
 	"log/slog"
 	"os"
 	"os/exec"
 )
 
-func Exec(res *Result, opts *Options) {
+func Exec(res *Result, opts *Options) 
+{
 	opts.ExecArgs = append(opts.ExecArgs, res.Sar()...)
 
 	cmd := exec.Command(opts.ExecArgs[0], opts.ExecArgs[1:]...)
@@ -17,7 +19,8 @@ func Exec(res *Result, opts *Options) {
 	cmd.Stdin = os.Stdin
 
 	err := cmd.Run()
-	if err != nil {
+	if err != nil
+	{
 		slog.Debug("error running command", "err", err)
 	}
 }
